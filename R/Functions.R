@@ -51,7 +51,7 @@ normalizing_constant <- function(func, lowerBound, upperBound) {
     if (abs(value) <= EPSILON) {
       stop("valoarea integralei este 0\n")
     }
-    return(value)
+    return(1 / value)
   },
   error = function(err_msg) {
     message("Eroare: Constanta de normalizare nu poate fi calculata")
@@ -88,7 +88,7 @@ normalize_function <- function(func, lowerBound, upperBound) {
   k_norm <- normalizing_constant(func, lowerBound, upperBound)
   if (!is.null(k_norm)) {
     function(x) {
-      (1 / k_norm) * func(x)
+      k_norm * func(x)
     }
   }
 }

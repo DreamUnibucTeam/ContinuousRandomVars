@@ -607,7 +607,10 @@ setMethod(
   f = "Cov",
   signature = c("ContRV", "ContRV", "function"),
   definition = function(crv1, crv2, dens) {
-    integrala <- integral2(dens, crv1@lowerBound, crv1@upperBound, crv2@lowerBound, crv2@upperBound)$Q
+    x_y_dens <- function(x, y) {
+      x * y * dens(x, y)
+    }
+    integrala <- integral2(x_y_dens, crv1@lowerBound, crv1@upperBound, crv2@lowerBound, crv2@upperBound)$Q
     return (integrala - (mean(crv1) * mean(crv2)))
   }
 )

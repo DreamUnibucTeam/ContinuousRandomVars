@@ -1,7 +1,7 @@
 Package: ContinuousRandVars
 Type: Package
 Title: R package designed to create and use continuos random variables and different useful functions for them
-Version: 1.0.1
+Version: 1.1.0
 Author: Nicolae Ducal, Laura-Maria Tender, Daniel Avram 
 Maintainer: The package maintainer <nicu.ducal01@gmail.com>
 Description: A package suited for creating and using Continuous Random Variables in R, along with some useful functions and methods,
