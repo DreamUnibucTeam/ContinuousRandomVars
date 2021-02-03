@@ -29,5 +29,5 @@ de probabilitate
 
 \examples{
 var1 <- ContRV(pdf = function(x) { 1 / 3 }, lowerBound = 3, upperBound = 6)
-crv <- ContRV(pdf = function(x) { 2 * exp(-2 * x) }, lowerBound = 0, upperBound = Inf)
+var2 <- ContRV(pdf = function(x) { 2 * exp(-2 * x) }, lowerBound = 0, upperBound = Inf)
 }

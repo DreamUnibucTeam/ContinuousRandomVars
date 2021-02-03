@@ -119,7 +119,7 @@ normalize_function <- function(func, lowerBound, upperBound) {
 #' @export
 #' @importFrom stats optimize
 #' @examples
-#' fun <- function(x) { 1 }
+#' fun <- function(x) { x }
 #' check_if_pdf(fun, 0, 1)   # FALSE
 #'
 #' fun <- function(x) { 2 * exp(-2*x) }

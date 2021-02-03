@@ -30,7 +30,7 @@ respectă proprietățile acesteia:
 Erori la verificarea funcției pot apărea în cazul în care integrala este divergentă pe acel interval
 }
 \examples{
-fun <- function(x) { 1 }
+fun <- function(x) { x }
 check_if_pdf(fun, 0, 1)   # FALSE
 
 fun <- function(x) { 2 * exp(-2*x) }

@@ -21,7 +21,7 @@
 #' @import methods
 #' @examples
 #' var1 <- ContRV(pdf = function(x) { 1 / 3 }, lowerBound = 3, upperBound = 6)
-#' crv <- ContRV(pdf = function(x) { 2 * exp(-2 * x) }, lowerBound = 0, upperBound = Inf)
+#' var2 <- ContRV(pdf = function(x) { 2 * exp(-2 * x) }, lowerBound = 0, upperBound = Inf)
 ContRV <- setClass(
   "ContRV",
   slots = list(
@@ -947,7 +947,6 @@ setMethod(
     }
 
     crv <- ContRV(pdf = normalize_function(func, lowerBoundAns, upperBoundAns), lowerBound = lowerBoundAns, upperBound = upperBoundAns)
-    print(normalizing_constant(func, lowerBoundAns, upperBoundAns))
     return(crv)
   }
 )
