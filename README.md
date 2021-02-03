@@ -1,5 +1,5 @@
 ## ContinuousRandomVars
-# R Package for easy generation of Continuous Random Variables
+# R Package for working with Continuous Random Variables
 
 # INSTALLATION
 
