@@ -30,5 +30,10 @@ var1 <- ContRV(pdf = fun1, lowerBound = -2, upperBound = 10)
 fun2 <- normalize_function(function(x) {x + 1}, 0, 10)
 var2 <- ContRV(pdf = fun2, lowerBound = 0, upperBound = 10)
 
-var_sum <- var1 - var2
+var_diff1 <- var1 - var2
+
+norm1 <- normal(0, 1)
+norm2 <- normal(0, 1)
+
+var_diff2 <- norm1 - norm2
 }

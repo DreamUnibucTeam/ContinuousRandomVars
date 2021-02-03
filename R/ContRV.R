@@ -923,7 +923,12 @@ setMethod(
 #' fun2 <- normalize_function(function(x) {x + 1}, 0, 10)
 #' var2 <- ContRV(pdf = fun2, lowerBound = 0, upperBound = 10)
 #'
-#' var_sum <- var1 - var2
+#' var_diff1 <- var1 - var2
+#'
+#' norm1 <- normal(0, 1)
+#' norm2 <- normal(0, 1)
+#'
+#' var_diff2 <- norm1 - norm2
 setMethod(
   f = "-",
   signature = c("ContRV", "ContRV"),
@@ -931,16 +936,11 @@ setMethod(
     lowerBoundAns <- max(e1@lowerBound, e2@lowerBound)
     upperBoundAns <- min(e1@upperBound, e2@upperBound)
 
-    # Transformam scaderea: X - Y in X + (-Y)
-    neg_e2_pdf <- function(x) {
-      return(-e2@pdf(x))
-    }
-
     # Functia noastra finala (adunata)
     func <- function(y) {
       # Functia de integrat
       to_integrate <- function(x) {
-        return(e1@pdf(y - x) * neg_e2_pdf(x))
+        return(e1@pdf(x - y) * e2@pdf(x))
       }
 
       return(integrate(to_integrate, lowerBoundAns, upperBoundAns)$value)
